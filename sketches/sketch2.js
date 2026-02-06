@@ -5,8 +5,18 @@ registerSketch('sk2', function (p) {
   };
   p.draw = function () {
     p.background(220);
+    p.fill(100, 150, 240);
+    p.textSize(32);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.text('HWK #4. A', p.width / 2, p.height / 2);
+  };
+  p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
     const h = p.hour();
     const m = p.minute();
     const s = p.second();
-  }
-});
+
+    p.fill(50);
+    p.stroke(200);
+    p.strokeWeight(4);
+    p.rect(125, 175, 250, 150, 20);
+  });
