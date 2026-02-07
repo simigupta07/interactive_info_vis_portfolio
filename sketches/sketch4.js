@@ -7,7 +7,6 @@ p.setup = function () {
   
   p.draw = function () {
     p.background(30);
-    p.translate(p.width / 2, p.height / 2);
   
     let h = p.hour();
     let m = p.minute();
