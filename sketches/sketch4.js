@@ -1,16 +1,17 @@
 registerSketch("sk4", function (p) {
-p.setup = function setup() {
+p.setup = function () {
   p.createCanvas(500, 500);
   p.textAlign(p.CENTER, p.CENTER);
   p.rectMode(p.CENTER);
 };
   
-  p.draw = function() {
-  p.background(25);
+  p.draw = function () {
+    p.background(30);
+    p.translate(p.width / 2, p.height / 2);
   
-  let h = p.hour();
-  let m = p.minute();
-  let s = p.second();
+    let h = p.hour();
+    let m = p.minute();
+    let s = p.second();
   
   // clock body
   p.fill(40);
