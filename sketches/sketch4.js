@@ -1,8 +1,8 @@
 registerSketch("sk4", function (p) {
 p.setup = function setup() {
-  createCanvas(500, 500);
-  textAlign(p.CENTER, p.CENTER);
-  rectMode(p.CENTER);
+  p.createCanvas(500, 500);
+  p.textAlign(p.CENTER, p.CENTER);
+  p.rectMode(p.CENTER);
 };
   
   p.draw = function() {
