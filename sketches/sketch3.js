@@ -22,5 +22,16 @@ registerSketch("sk3", function (p) {
   p.drawRing(240, secProgress, color(255, 80, 80));   // seconds
   p.drawRing(185, minProgress, color(80, 255, 120));  // minutes
   p.drawRing(130, hourProgress, color(80, 180, 255)); // hours
-  }
+
+   // Digital time in center
+   noStroke();
+   fill(255);
+   textAlign(CENTER, CENTER);
+   textSize(28);
+   text(
+     nf(hour(), 2) + ":" + nf(m, 2) + ":" + nf(s, 2),
+     0,
+     0
+   );
+ }
 })
