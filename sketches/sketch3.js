@@ -10,18 +10,18 @@ registerSketch("sk3", function (p) {
     p.translate(width / 2, height / 2);
 
   //set up time based on hour, minute, second
-  let h = hour() % 12;
-  let m = minute();
-  let s = second();
+  let h = p.hour() % 12;
+  let m = p.minute();
+  let s = p.second();
 
   let secProgress = s / 60;
   let minProgress = (m + s / 60) / 60;
   let hourProgress = (h + m / 60) / 12;
 
   // Draw rings to simulate apple watch
-  p.drawRing(240, secProgress, color(255, 80, 80));   // seconds
-  p.drawRing(185, minProgress, color(80, 255, 120));  // minutes
-  p.drawRing(130, hourProgress, color(80, 180, 255)); // hours
+  drawRing(240, secProgress, p.color(255, 80, 80));   // seconds
+  drawRing(185, minProgress, p.color(80, 255, 120));  // minutes
+  drawRing(130, hourProgress, p.color(80, 180, 255)); // hours
 
    // Digital time in center
    p.noStroke();
@@ -29,7 +29,7 @@ registerSketch("sk3", function (p) {
    p.textAlign(CENTER, CENTER);
    p.textSize(28);
    p.text(
-     nf(hour(), 2) + ":" + nf(m, 2) + ":" + nf(s, 2),
+     p.nf(p.hour(), 2) + ":" + p.nf(m, 2) + ":" + p.nf(s, 2),
      0,
      0
    );
