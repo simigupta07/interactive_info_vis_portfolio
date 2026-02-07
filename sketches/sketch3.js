@@ -1,14 +1,26 @@
-// Instance-mode sketch for tab 3
-registerSketch('sk3', function (p) {
+registerSketch("sk3", function (p) {
   p.setup = function () {
-    p.createCanvas(p.windowWidth, p.windowHeight);
-  };
-  p.draw = function () {
-    p.background(240, 200, 200);
-    p.fill(180, 60, 60);
-    p.textSize(32);
+    p.createCanvas(500, 500);
+    p.angleMode(p.DEGREES);
     p.textAlign(p.CENTER, p.CENTER);
-    p.text('HWK #4. B', p.width / 2, p.height / 2);
   };
-  p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
-});
+
+  p.draw = function () {
+    p.background(30);
+    p.translate(width / 2, height / 2);
+
+  //set up time based on hour, minute, second
+  let h = hour() % 12;
+  let m = minute();
+  let s = second();
+
+  let secProgress = s / 60;
+  let minProgress = (m + s / 60) / 60;
+  let hourProgress = (h + m / 60) / 12;
+
+  // Draw rings to simulate apple watch
+  p.drawRing(240, secProgress, color(255, 80, 80));   // seconds
+  p.drawRing(185, minProgress, color(80, 255, 120));  // minutes
+  p.drawRing(130, hourProgress, color(80, 180, 255)); // hours
+  }
+})
