@@ -19,15 +19,36 @@ p.setup = function setup() {
   p.rect(p.width/2, p.height/2, 320, 180, 25);
 
    //the bar that shows the grill
-   noStroke();
-   fill(60);
-   rect(width/2, height/2 - 70, 260, 20, 10);
+   p.noStroke();
+   p.fill(60);
+   p.rect(p.width/2, p.height/2 - 70, 260, 20, 10);
  
    //legs
-   stroke(180);
-   strokeWeight(4);
-   line(width/2 - 120, height/2 + 90, width/2 - 140, height/2 + 115);
-   line(width/2 + 120, height/2 + 90, width/2 + 140, height/2 + 115);
+   p.stroke(180);
+   p.strokeWeight(4);
+   p.line(p.width/2 - 120, p.height/2 + 90, p.width/2 - 140, p.height/2 + 115);
+   p.line(p.width/2 + 120, p.height/2 + 90, p.width/2 + 140, p.height/2 + 115);
 
+   //show the time
+  let timeStr =
+  p.nf(h, 2) + ":" +
+  p.nf(m, 2) + ":" +
+  p.nf(s, 2);
+
+//show time in digital style
+p.noStroke();
+p.fill(0, 255, 120);
+p.textSize(52);
+p.text(timeStr, p.width/2, p.height/2);
+
+//label
+p.fill(180);
+p.textSize(16);
+p.text("ALARM CLOCK", p.width/2, p.height/2 + 55);
+
+
+//light
+p.fill(255, 60, 60);
+p.ellipse(p.width/2 + 130, p.height/2 - 70, 10, 10);
   }
 });
