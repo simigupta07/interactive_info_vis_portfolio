@@ -24,14 +24,25 @@ registerSketch("sk3", function (p) {
   p.drawRing(130, hourProgress, color(80, 180, 255)); // hours
 
    // Digital time in center
-   noStroke();
-   fill(255);
-   textAlign(CENTER, CENTER);
-   textSize(28);
-   text(
+   p.noStroke();
+   p.fill(255);
+   p.textAlign(CENTER, CENTER);
+   p.textSize(28);
+   p.text(
      nf(hour(), 2) + ":" + nf(m, 2) + ":" + nf(s, 2),
      0,
      0
    );
  }
+ //function to draw the ring
+ function drawRing(size, progress, col) {
+  p.stroke(50);
+  p.strokeWeight(22);
+  p.noFill();
+  p.ellipse(0, 0, size, size);
+
+  p.stroke(col);
+  let angle = map(progress, 0, 1, 0, 360);
+  p.arc(0, 0, size, size, -90, -90 + angle);
+}
 })
